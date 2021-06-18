@@ -4,7 +4,7 @@ if ($_GET['get']) {
 	header('Content-Type: text/plain');
 	
 	if ($_GET['get'] == 'dates') {
-		foreach (scandir('logs/narc/Logs') as $file) {
+		foreach (scandir('logs/narc/') as $file) {
 			if ($file === '.' || $file === '..') continue;
 			
 			echo substr($file, 11, 8), "\n";
@@ -55,7 +55,7 @@ if ($_GET['get']) {
 							
 							var id = "chart" + date.toString() + month.toString() + year.toString();
 							
-							var log_url = 'https://srv.nwrp.eu/logs/narc/Logs/server_log_' + dates[i] + '.txt';
+							var log_url = 'https://srv.nwrp.eu/logs/narc/server_log_' + dates[i] + '.txt';
 							
 							$("#chart-wrapper").append('<h2><center>' + d.toLocaleDateString() + '<center></h2><div class="chart" id="' + id +'"></div>');
 							
